@@ -1,0 +1,34 @@
+using System;
+
+namespace TestMethodKeywordJuly2018
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            // Add method 
+            Console.WriteLine(Add(1,2,3)); // sum = 1 + 2 + 3
+            Console.WriteLine(Add(1, 2, 3, 5, 23, 8, 6)); // sum = 1 + 2+ 3+ 5+ 23+ 8+ 6
+            Console.WriteLine(Add()); // Add method has no params... so means 0 // sum = 0 + 0
+        }
+
+        // keyword "params" so that you can pass any number parameter you'd like
+        public static int Add(params int[] input)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                sum += input[i];
+            }
+            return sum;
+        }
+    }
+}
+// prints:
+//Console.WriteLine(Add(1,2,3)); // sum = 1 + 2 + 3
+//Console.WriteLine(Add(1, 2, 3, 5, 23, 8, 6)); // sum = 1 + 2+ 3+ 5+ 23+ 8+ 6
+//Console.WriteLine(Add()); // Add method has no params... so means 0 // sum = 0 + 0
+// 6
+// 48 
+// 0 
